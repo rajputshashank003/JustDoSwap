@@ -1,5 +1,3 @@
-import React from 'react'
-
 function Footer() {
     return (
         <footer className="max-sm:w-[20rem] rounded-md shadow m-4 mt-0 bg-slate-900">
