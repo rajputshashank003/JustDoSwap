@@ -2,7 +2,7 @@ import Box from './Box'
 import SwapIcon from './SwapIcon'
 import { tokens } from './tokens'
 
-const Swapper = ({listShow, onChange, setListShow, inputMint, outputMint, setOutputMint, setInputMint, inAmount , outAmount}) => {
+const Swapper : React.FC<any> = ({listShow, onChange, setListShow, inputMint, outputMint, setOutputMint, setInputMint, inAmount , outAmount}) => {
     const handleSwapIcon = () => {
         const temp = inputMint;
         setInputMint(outputMint);

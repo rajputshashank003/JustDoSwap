@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const Box = ({listShow , inAmount, setListShow,tokenData, children, value, onChange, forData}) => {
+const Box : React.FC<any> = ({setListShow,tokenData, children, value, onChange, forData}) => {
 
     const handleAllTokenShow = () => {
-        setListShow(prev => [!prev[0], prev[1]]);
+        setListShow((prev : any) => [!prev[0], prev[1]]);
     }
     const [isFocus , setFocus] = useState(false);
 
-    const formatValue = (val) => {
+    const formatValue = (val : any) => {
         if(val == 0){
             return '';
         }

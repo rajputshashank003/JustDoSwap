@@ -4,7 +4,7 @@ import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { tokens } from "./tokens";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import Swapper from "./Swapper";
-import { setWalletIsHovered, walletButtonStyle } from "./WalletButtonStyle.ts";
+import { walletButtonStyle } from "./WalletButtonStyle.ts";
 import Title from "./Title.tsx";
 import Footer from "./Footer.tsx";
 
