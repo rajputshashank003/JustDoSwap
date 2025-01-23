@@ -13,7 +13,7 @@ const Swapper : React.FC<any> = ({listShow, onChange, setListShow, inputMint, ou
             <Box forData={"input"} onChange={onChange} value={inAmount} setListShow={setListShow} tokenData={tokens[inputMint]} >
                 You're Selling
             </Box>
-            <hr className='w-[90%] absolute top-1/2 border-[#131B24] '  />
+            <hr className='w-[90%] absolute top-1/2 max-sm:top-[53%] border-[#131B24] '  />
             <SwapIcon onClick={handleSwapIcon}/>
             <Box inAmount={inAmount} forData={"output"} value={outAmount} listShow={listShow} setListShow={setListShow} tokenData={tokens[outputMint]} >
                 You're Buying

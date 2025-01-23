@@ -77,11 +77,11 @@ export const Page = () => {
       }, [connection, wallet]);
 
     return (
-        <div className=" h-screen w-screen flex justify-center items-center flex-col" >
+        <div className=" h-screen relative backdrop-blur-3xl w-screen flex justify-center items-center flex-col" >
             <Title/>
             {
                 listShow[0] &&
-                <div onClick={() => handleInputMintShow(0)} className="absolute z-[9999] bg-opacity-[0.6] transition-all duration-500 ease-out opacity-100 scale-100 bg-black flex justify-center items-center backdrop-blur-sm w-screen h-screen">
+                <div onClick={() => handleInputMintShow(0)} className="absolute z-[99999] bg-opacity-[0.6] transition-all duration-500 ease-out opacity-100 scale-100 bg-black flex justify-center items-center backdrop-blur-sm w-screen h-screen">
                     <ul className="max-h-[25rem] w-[16rem] bg-slate-800 rounded-xl p-2 text-white text-xl overflow-scroll no-scrollbar">
                         {
                             tokens.slice(0, 24).map((token, ind) => (

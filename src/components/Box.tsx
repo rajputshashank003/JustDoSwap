@@ -18,7 +18,7 @@ const Box : React.FC<any> = ({setListShow,tokenData, children, value, onChange, 
     };
 
     return (
-        <div className={`w-96 max-sm:w-[20rem] p-4 h-fit font-inter rounded-xl bg-[#131B24] font-normal z-[99] ${isFocus ? "shadow-[0.2px_0.2px_3px_#e2f8c1] border-[0.1px] border-[#C7F284]" : ""}`}>
+        <div className={`w-96 max-sm:w-[20rem] p-4 h-fit font-inter rounded-xl bg-[#131B24] backdrop-blur-xl bg-opacity-[0.6] font-normal z-[999] ${isFocus ? "shadow-[0.2px_0.2px_3px_#e2f8c1] border-[0.1px] border-[#C7F284]" : ""}`}>
             <div className="text-[1rem] mb-4">
                 {children}
             </div>
