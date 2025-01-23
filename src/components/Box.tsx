@@ -1,10 +1,7 @@
 import { useState } from "react";
 
-const Box : React.FC<any> = ({setListShow,tokenData, children, value, onChange, forData}) => {
+const Box : React.FC<any> = ({handleInputMintShow ,tokenData, children, value, onChange, forData}) => {
 
-    const handleAllTokenShow = () => {
-        setListShow((prev : any) => [!prev[0], prev[1]]);
-    }
     const [isFocus , setFocus] = useState(false);
 
     const formatValue = (val : any) => {
@@ -23,7 +20,7 @@ const Box : React.FC<any> = ({setListShow,tokenData, children, value, onChange, 
                 {children}
             </div>
             <div className="flex flex-row justify-between items-cener">
-                <div onClick={handleAllTokenShow} className="flex flex-row hover:shadow-[0.001px_0.001px_5px_#C7F284] hover:border-[0.2px] hover:bg-[#e2f8c1] hover:bg-opacity-[0.2] duration-200 cursor-pointer hover:border-[#C7F284] hover:text-[#C7F284] text-slate-400 bg-[#1C2936] h-fit w-fit rounded-md px-2 py-1 justify-between items-center">
+                <div onClick={() => handleInputMintShow(forData === 'input' ? 0 : 1)} className="flex flex-row hover:shadow-[0.001px_0.001px_5px_#C7F284] hover:border-[0.2px] hover:bg-[#e2f8c1] hover:bg-opacity-[0.2] duration-200 cursor-pointer hover:border-[#C7F284] hover:text-[#C7F284] text-slate-400 bg-[#1C2936] h-fit w-fit rounded-md px-2 py-1 justify-between items-center">
                     <img className="h-6 w-6 max-sm:h-4 max-sm:w-4 rounded-full" src={tokenData.logoURI} alt="" />
                     <div className="text-sm max-sm:text-[10px] text-slate-100 m-2">
                         {tokenData.name}

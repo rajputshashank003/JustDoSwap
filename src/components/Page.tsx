@@ -36,10 +36,8 @@ export const Page = () => {
         }
         setInAmount(amount);
         const quote = await quoteResponse(tokens[inputMint].address, tokens[outputMint].address, amount, 0.5 * 100);
-        console.log(quote); 
         setQResponse(quote);
         if(quote.outAmount){
-            console.log(tokens[outputMint])
             setOutAmount(quote.outAmount / Math.pow(10 , tokens[outputMint].decimals));
         }
     }
@@ -85,8 +83,8 @@ export const Page = () => {
                     <ul className="max-h-[25rem] w-[16rem] bg-slate-800 rounded-xl p-2 text-white text-xl overflow-scroll no-scrollbar">
                         {
                             tokens.slice(0, 24).map((token, ind) => (
-                                <li key={ind} className="flex cursor-pointer hover:bg-slate-700 rounded-xl duration-200 flex-row gap-4 m-2">
-                                    <img className="h-[2rem] rounded-full" onClick={() => handleMintChange(ind)} src={token.logoURI} alt={`${token.name} logo`} />
+                                <li onClick={() => handleMintChange(ind)} key={ind} className="flex cursor-pointer hover:bg-slate-700 rounded-xl duration-200 flex-row gap-4 m-2">
+                                    <img className="h-[2rem] rounded-full" src={token.logoURI} alt={`${token.name} logo`} />
                                     {token.name}
                                 </li>
                             ))
@@ -94,7 +92,7 @@ export const Page = () => {
                     </ul>
                 </div>
             }
-            <Swapper onChange={handleChangeInput} inAmount={inAmount} outAmount={outAmount} setInputMint={setInputMint} setOutputMint={setOutputMint} listShow={listShow} setListShow={setListShow} inputMint={inputMint} outputMint={outputMint}/>
+            <Swapper handleInputMintShow={handleInputMintShow} onChange={handleChangeInput} inAmount={inAmount} outAmount={outAmount} setInputMint={setInputMint} setOutputMint={setOutputMint} listShow={listShow} setListShow={setListShow} inputMint={inputMint} outputMint={outputMint}/>
             <div onMouseEnter={() => setWalletIsHovered(true)} onMouseLeave={() => setWalletIsHovered(false)} className="h-fit w-fit m-2 mb-10 sm:mb-16 relative mt-8">
                 {
                     !wallet.publicKey ?
